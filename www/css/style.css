@@ -1,1 +1,42 @@
-/* Empty. Add your own CSS if you like */
+
+.fixed-outside {
+
+  position: absolute;
+  bottom: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
+  color: white;
+  width: 90%;
+  height: 120px;
+  text-align: center;
+  
+}
+
+#signin-popup
+{width: 90%; 
+height: 60%; 
+min-height: 0; 
+max-height: 250px; 
+top: 20%; left: 5%; right: 5%; bottom: 20%;
+
+}
+
+
+
+.pane { 
+        background: url('http://i.giphy.com/yoJC2LeoA3VWezo1OM.gif'); 
+        background-size: 100% 100% !important;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachmesnt: fixed;
+
+    }
+.button{
+	opacity: 0.8 !important;
+}
+
+#scroll-bar-indicator
+{
+	display: none;
+}
+

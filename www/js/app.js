@@ -11,7 +11,7 @@ angular.module('ionicApp', ['ionic'])
     .state('signin', {
       url: '/sign-in',
       templateUrl: 'templates/sign-in.html',
-      controller: 'SignInCtrl'
+      controller: 'SignInModal'
     })
     .state('forgotpassword', {
       url: '/forgot-password',
@@ -74,7 +74,8 @@ angular.module('ionicApp', ['ionic'])
 
     .state('landingpage', {
       url: '/landingpage',
-      templateUrl: 'templates/landingpage.html'
+      templateUrl: 'templates/landingpage.html',
+      controller:'SignInModal'
     });
 
     
@@ -93,6 +94,31 @@ angular.module('ionicApp', ['ionic'])
   
 })
 
-.controller('HomeTabCtrl', function($scope) {
-  console.log('HomeTabCtrl');
+.controller('SignInModal', function($scope, $ionicModal) {
+  $ionicModal.fromTemplateUrl('templates/sign-in.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+  $scope.openModal = function() {
+    $scope.modal.show();
+  };
+  $scope.closeModal = function() {
+    $scope.modal.hide();
+  };
+  // Cleanup the modal when we're done with it!
+  $scope.$on('$destroy', function() {
+    $scope.modal.remove();
+  });
+  // Execute action on hide modal
+  $scope.$on('modal.hidden', function() {
+    // Execute action
+  });
+  // Execute action on remove modal
+  $scope.$on('modal.removed', function() {
+    // Execute action
+  });
+
+
 });
